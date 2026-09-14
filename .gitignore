@@ -1,0 +1,43 @@
+﻿# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Next.js & Build outputs
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+
+# Raw R&D datasets & Large raw splats (>70GB)
+caseStudy_01/
+Downloads/
+02_camera_alignment/
+
+# Large binaries exceeding GitHub & Vercel 100MB limits
+public/assets/case1/The_Bowes_Museum.sog
+public/assets/case2/caseStudy10_dc_fast.ply
+
+# Redundant / uncompressed large media
+public/assets/case1/*allframes.gif
+public/assets/case1/*15fps.gif
+public/assets/case1/*_test.gif
+
+# Environment variables
+.env*.local
+.env
+
+# Logs & Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
