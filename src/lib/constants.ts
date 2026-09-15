@@ -13,7 +13,7 @@ export const HERO_CONTENT = {
   targetBadge: "FOR ELLIOT PAYNE, PROJECT MANAGERS & HIRING COMMITTEE",
   headline: "Next-Gen Spatial Visualization: OpenUSD & 3D Gaussian Splatting Pipeline",
   subheadline: "Accelerating infrastructure feasibility and consent delivery by bridging survey-grade photorealism, procedural USD graphs, and frictionless real-time web review.",
-  leadQuote: "Bringing 16+ years of visual effects supervision and procedural OpenUSD/3DGS workflows to lead Truescape's Christchurch production — delivering on schedule, within budget, and defensibly accurate for council hearings.",
+  leadQuote: "Bridging 16+ years of VFX supervision with procedural OpenUSD/3DGS workflows — driving Truescape’s Christchurch team to deliver on-time, on-budget, and defensibly accurate visualization for resource consents.",
 };
 
 export const TECH_VALUES = [
@@ -29,9 +29,9 @@ export const TECH_VALUES = [
   {
     index: "02",
     tag: "PRODUCTION REALLOCATION",
-    title: "Eliminating Camera Tracking Bottlenecks",
-    lead: "Reinvesting painstaking matchmove hours into asset fidelity.",
-    desc: "Survey-calibrated volumetric coordinate systems eliminate tedious camera solves and track slip, reallocating senior artist time entirely to photorealism and engineering precision.",
+    title: "Streamlining Spatial Camera Alignment",
+    lead: "Reinvesting tedious manual alignment hours into engineering fidelity.",
+    desc: "Survey-referenced volumetric environments eliminate error-prone perspective matching and drone camera drift, freeing senior artists to focus entirely on visual accuracy and regulatory precision.",
     metricValue: "Zero Matchmove",
     metricLabel: "Tracking Overhead Eliminated",
   },
