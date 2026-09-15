@@ -168,22 +168,55 @@ export const SogViewer: React.FC<SogViewerProps> = ({
     console.log('Current Camera Pose:', poseData);
   }, []);
 
-  const toggleFullscreen = useCallback(() => {
-    if (!containerRef.current) return;
-    if (!document.fullscreenElement) {
-      containerRef.current.requestFullscreen().then(() => setIsFullscreen(true)).catch(() => {});
-    } else {
-      document.exitFullscreen().then(() => setIsFullscreen(false)).catch(() => {});
+  const resizeViewerCanvas = useCallback(() => {
+    if (!containerRef.current || !appRef.current) return;
+    const isFs = !!document.fullscreenElement;
+    const w = isFs ? window.innerWidth : containerRef.current.clientWidth;
+    const h = isFs ? window.innerHeight : containerRef.current.clientHeight;
+
+    if (w > 0 && h > 0) {
+      appRef.current.resizeCanvas(w, h);
+      if (cameraRef.current && cameraRef.current.camera) {
+        cameraRef.current.camera.aspectRatio = w / h;
+      }
+      if (appRef.current.renderNextFrame !== undefined) {
+        appRef.current.renderNextFrame = true;
+      }
     }
   }, []);
 
+  const toggleFullscreen = useCallback(() => {
+    if (!containerRef.current) return;
+    if (!document.fullscreenElement) {
+      containerRef.current.requestFullscreen().then(() => {
+        setIsFullscreen(true);
+        [0, 50, 150, 300, 500].forEach((delay) => setTimeout(resizeViewerCanvas, delay));
+      }).catch(() => {});
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullscreen(false);
+        [0, 50, 150, 300, 500].forEach((delay) => setTimeout(resizeViewerCanvas, delay));
+      }).catch(() => {});
+    }
+  }, [resizeViewerCanvas]);
+
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement);
+      const isFs = !!document.fullscreenElement;
+      setIsFullscreen(isFs);
+      [0, 50, 150, 300, 500].forEach((delay) => {
+        setTimeout(resizeViewerCanvas, delay);
+      });
     };
     document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    window.addEventListener('resize', resizeViewerCanvas);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+      window.removeEventListener('resize', resizeViewerCanvas);
+    };
+  }, [resizeViewerCanvas]);
 
   // Native non-passive wheel listener: reliably intercepts wheel and prevents window/page scroll
   useEffect(() => {
@@ -211,6 +244,7 @@ export const SogViewer: React.FC<SogViewerProps> = ({
     let isMounted = true;
     let app: any = null;
     let observer: IntersectionObserver | null = null;
+    let resizeObserver: ResizeObserver | null = null;
 
     const initPlayCanvas = async () => {
       try {
@@ -283,14 +317,19 @@ export const SogViewer: React.FC<SogViewerProps> = ({
 
         const handleResize = () => {
           if (!container || !app || !isMounted) return;
-          const w = container.clientWidth;
-          const h = container.clientHeight;
-          if (w > 0 && h > 0) {
-            app.resizeCanvas(w, h);
-          }
+          resizeViewerCanvas();
         };
         window.addEventListener('resize', handleResize);
         handleResize();
+
+        // ResizeObserver tracks all dimension changes including fullscreen transitions
+        if (typeof ResizeObserver !== 'undefined' && container) {
+          resizeObserver = new ResizeObserver(() => {
+            if (!isMounted) return;
+            resizeViewerCanvas();
+          });
+          resizeObserver.observe(container);
+        }
 
         // IntersectionObserver pauses rendering when offscreen
         if (typeof IntersectionObserver !== 'undefined') {
@@ -430,6 +469,10 @@ export const SogViewer: React.FC<SogViewerProps> = ({
         observer.disconnect();
         observer = null;
       }
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+        resizeObserver = null;
+      }
       splatEntityRef.current = null;
       pivotEntityRef.current = null;
       if (appRef.current) {
@@ -439,7 +482,7 @@ export const SogViewer: React.FC<SogViewerProps> = ({
         appRef.current = null;
       }
     };
-  }, [sogUrl, fallbackUrl, initialUpright, modelCenter]);
+  }, [sogUrl, fallbackUrl, initialUpright, modelCenter, resizeViewerCanvas]);
 
   const handlePointerDown = (e: React.PointerEvent) => {
     orbitState.current.isDragging = true;
@@ -498,8 +541,10 @@ export const SogViewer: React.FC<SogViewerProps> = ({
     <div 
       ref={containerRef}
       style={{ overscrollBehavior: 'contain' }}
-      className={`relative w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-950 shadow-xl flex flex-col select-none overscroll-none touch-none transition-all ${
-        isFullscreen ? 'fixed inset-0 z-50 rounded-none h-screen' : 'h-[520px] sm:h-[620px] lg:h-[680px]'
+      className={`relative w-full overflow-hidden bg-slate-950 flex flex-col select-none overscroll-none touch-none ${
+        isFullscreen
+          ? '!fixed !inset-0 !z-50 !w-screen !h-screen !rounded-none !border-none'
+          : 'rounded-2xl border border-slate-200 shadow-xl h-[520px] sm:h-[620px] lg:h-[680px]'
       }`}
     >
       {/* 1. Top HUD Bar */}
@@ -708,7 +753,7 @@ export const SogViewer: React.FC<SogViewerProps> = ({
 
       {/* 2. Interactive WebGL Canvas */}
       <div 
-        className="relative w-full h-full cursor-grab active:cursor-grabbing overflow-hidden touch-none overscroll-none"
+        className="relative flex-1 w-full h-full min-h-0 cursor-grab active:cursor-grabbing overflow-hidden touch-none overscroll-none"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -719,7 +764,7 @@ export const SogViewer: React.FC<SogViewerProps> = ({
           ref={canvasRef} 
           id={canvasId.current}
           className="w-full h-full block touch-none"
-          style={{ touchAction: 'none' }}
+          style={{ touchAction: 'none', width: '100%', height: '100%' }}
         />
       </div>
 
