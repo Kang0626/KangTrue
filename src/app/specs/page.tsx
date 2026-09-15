@@ -211,6 +211,92 @@ if (count < min_neighbors) {
                     </div>
                   )}
 
+                  {/* Special Embedded Showcase for Section 03: Why This Matters to Truescape */}
+                  {sec.id === 'solaris-ml' && (
+                    <div className="mt-8 rounded-2xl border border-sky-500/30 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-80 h-80 bg-[#0085ca]/15 rounded-full blur-3xl pointer-events-none" />
+
+                      <div className="relative z-10">
+                        <div className="flex flex-wrap items-center gap-2 mb-3">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0085ca]/20 border border-[#0085ca]/40 text-[11px] font-mono text-sky-300 font-bold uppercase tracking-wider">
+                            <Sparkles className="w-3.5 h-3.5 text-[#38bdf8]" />
+                            Production Lead Value Proposition
+                          </span>
+                          <span className="text-xs font-mono text-slate-400">Commercial &amp; Regulatory Impact</span>
+                        </div>
+
+                        <h3 className="text-xl sm:text-2xl font-extrabold text-white font-sans tracking-tight mb-2">
+                          Why This Matters to Truescape
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed mb-6 max-w-3xl">
+                          Transforming complex procedural R&amp;D into decisive commercial ROI: solving the three most resource-intensive bottlenecks in infrastructure consent visualization.
+                        </p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                          <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between hover:border-[#0085ca]/50 transition-all shadow-xs">
+                            <div>
+                              <div className="flex items-center gap-2 mb-2.5">
+                                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                                <span className="text-[10.5px] font-mono text-emerald-400 font-bold uppercase tracking-wider">
+                                  Cost &amp; Schedule
+                                </span>
+                              </div>
+                              <h4 className="text-sm font-bold text-white font-sans mb-2 leading-snug">
+                                Zero Re-Shoots for Design Revisions
+                              </h4>
+                              <p className="text-xs text-slate-300 font-light leading-relaxed">
+                                When turbine models change or structural dimensions are revised, swapping the referenced USD asset rebuilds the synthetic 3DGS dataset in under 30 minutes—eliminating expensive field re-shoots and scheduling delays.
+                              </p>
+                            </div>
+                            <div className="mt-4 pt-3 border-t border-slate-800/80 font-mono text-[10px] text-slate-400">
+                              30-Min Automated Turnaround
+                            </div>
+                          </div>
+
+                          <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between hover:border-[#0085ca]/50 transition-all shadow-xs">
+                            <div>
+                              <div className="flex items-center gap-2 mb-2.5">
+                                <span className="w-2 h-2 rounded-full bg-sky-400" />
+                                <span className="text-[10.5px] font-mono text-sky-400 font-bold uppercase tracking-wider">
+                                  Visual Defensibility
+                                </span>
+                              </div>
+                              <h4 className="text-sm font-bold text-white font-sans mb-2 leading-snug">
+                                Flawless Foreground Occlusion
+                              </h4>
+                              <p className="text-xs text-slate-300 font-light leading-relaxed">
+                                Tedious manual rotoscoping and paint fixes (masking turbines behind complex tree branches and powerlines) are eliminated; 3DGS volumetric radiance inherently resolves true physical foreground depth.
+                              </p>
+                            </div>
+                            <div className="mt-4 pt-3 border-t border-slate-800/80 font-mono text-[10px] text-slate-400">
+                              Automated Volumetric Depth
+                            </div>
+                          </div>
+
+                          <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between hover:border-[#0085ca]/50 transition-all shadow-xs">
+                            <div>
+                              <div className="flex items-center gap-2 mb-2.5">
+                                <span className="w-2 h-2 rounded-full bg-amber-400" />
+                                <span className="text-[10.5px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                                  Council Certainty
+                                </span>
+                              </div>
+                              <h4 className="text-sm font-bold text-white font-sans mb-2 leading-snug">
+                                Instant Stakeholder Explorable Links
+                              </h4>
+                              <p className="text-xs text-slate-300 font-light leading-relaxed">
+                                Instead of static single-angle photomontages, deliver 360-degree real-time explorable links that allow commissioners and community panels to interactively verify visual and environmental impact live.
+                              </p>
+                            </div>
+                            <div className="mt-4 pt-3 border-t border-slate-800/80 font-mono text-[10px] text-slate-400">
+                              Interactive 360° Web Delivery
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Special Embedded Showcase for Section 05: Python MCP Automation Script */}
                   {sec.id === 'mcp-automation' && (
                     <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-950 overflow-hidden shadow-lg">

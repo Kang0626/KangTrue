@@ -182,8 +182,8 @@ export const CASE_STUDY_01 = {
 
 export const CASE_STUDY_02 = {
   badge: "CASE STUDY 02",
-  title: "Synthetic USD to 3DGS Hybrid Integration",
-  subtitle: "Converting client CAD/BIM data into 3DGS via Houdini machine learning and compositing into real-world drone scans for instant review.",
+  title: "Bridging Proposed Engineering Assets with Real-World Radiance",
+  subtitle: "Automated Solaris/LOPs to 3DGS pipeline for rapid CAD/BIM synthetic ground truth generation and hybrid composite verification.",
   caption: "Seamless radiance field integration between synthetic CAD/USD assets and real-world surveyed drone scan environments.",
   strategicAdvantage: {
     badge: "Core Strategic Advantage",
@@ -195,8 +195,8 @@ export const CASE_STUDY_02 = {
   },
   videoShowcase: {
     badge: "Live Pipeline Execution",
-    title: "USD to 3DGS Machine Learning & Radiance Field Merge",
-    lead: "Houdini screen capture illustrating the end-to-end procedural workflow: USD ingest, 50-camera dome generation, ML 3DGS training, and drone compositing.",
+    title: "CAD/BIM to 3DGS Hybrid Radiance Synthesis",
+    lead: "Automated end-to-end procedural execution: USD ingestion, deterministic 50-camera sampling, Karma XPU batching, and depth-consistent drone composite.",
     video: {
       imagePath: "/assets/case2/usd_to_3dgs.mp4",
       alt: "Houdini Machine Learning USD-to-3DGS Conversion & Real-World Drone Scan Compositing",
@@ -207,23 +207,23 @@ export const CASE_STUDY_02 = {
     steps: [
       {
         step: "01",
-        name: "USD Ingest & Stage Setup",
-        desc: "Ingests client USD geometry into Solaris (IN_Stage), binding MaterialX shaders and HDR dome illumination.",
+        name: "Deterministic Perspective Sampling",
+        desc: "Procedurally generates a 360-degree hemispherical camera rig around the target structure in Solaris, ensuring uniform viewpoint density and zero perspective bias.",
       },
       {
         step: "02",
-        name: "Procedural 50-Camera Dome",
-        desc: "Setup_Camera_Array procedurally generates a 50-camera orbital dome circumscribing the asset.",
+        name: "Stage Hygiene & USD Governance",
+        desc: "Resolves texture typing, flattens layer breaks, and references client CAD/BIM assets with calibrated MaterialX shaders under physical lighting.",
       },
       {
         step: "03",
-        name: "In-Houdini ML Training",
-        desc: "ML_Train_GSplats executes in-engine machine learning to solve 3D Gaussian splats from camera viewpoints.",
+        name: "Automated Stage Synthesis (Karma XPU & PDG)",
+        desc: "Offloads multi-camera EXR rendering and dataset packaging to background TOPs batches, generating training-ready ground truth without production halts.",
       },
       {
         step: "04",
-        name: "SOP Radiance Field Merge",
-        desc: "Dual-branch SOP merge1 composites synthetic splats into surveyed drone scans with unified depth sorting.",
+        name: "Depth-Consistent Hybrid Simulation",
+        desc: "Directly merges synthetic splats into surveyed real-world drone scans, achieving natural foreground occlusion and millimeter placement precision.",
       },
     ],
     telemetry: {
@@ -431,21 +431,21 @@ export const TECHNICAL_SPECS = {
     {
       id: "solaris-ml",
       number: "03",
-      shortTitle: "Solaris USD & ML Rig",
-      title: "Solaris LOPs USD Ingestion & 50-Camera Dome ML Training Rig",
-      summary: "Procedural synthesis of 3DGS radiance fields from client CAD/BIM models circumscribed by automated camera arrays.",
+      shortTitle: "CAD/BIM to Radiance",
+      title: "Bridging Proposed Engineering Assets with Real-World Radiance",
+      summary: "Automated Solaris/LOPs to 3DGS pipeline for rapid CAD/BIM synthetic ground truth generation and hybrid composite verification.",
       details: [
         {
-          label: "OpenUSD Stage Sublayering & MaterialX",
-          text: "Client CAD/BIM assets are referenced into a Solaris LOPs stage via sublayer nodes. PBR MaterialX shaders are assigned with physical roughness, metallic, and normal maps under calibrated HDRI dome lighting.",
+          label: "Stage 1: Deterministic Perspective Sampling (Camera Rigging)",
+          text: "Instead of relying on manual camera setups, we procedurally generate 360-degree hemispherical camera rigs around the target structure in Solaris. This guarantees uniform viewpoint density and zero perspective bias, providing the exact parallax necessary for high-fidelity spatial reconstruction.",
         },
         {
-          label: "Spherical 50-Camera Array Trigonometry",
-          text: "Procedural Python SOP/LOP generates 50 equidistant camera viewpoints (`num_cams = 50`) on a hemisphere using Fibonacci spiral sampling, targeting the metric datum center of the intervention.",
+          label: "Stage 2: Automated Stage Synthesis via Karma XPU & PDG (Governance)",
+          text: "Using Houdini PDG/TOPs, multi-camera EXR rendering and dataset packaging are fully offloaded to background batch execution. Strict USD stage hygiene—resolving texture typing and flattening layer breaks—ensures that complex infrastructure CAD assets translate into training-ready ground truth without production halts.",
         },
         {
-          label: "In-Engine ML Training & SOP Compositing",
-          text: "Houdini ML_Train_GSplats solves volumetric Gaussians directly from the multi-camera render buffer. The resulting synthetic radiance field is merged into surveyed drone scans using dual-branch SOP `merge1` with unified depth sorting.",
+          label: "Stage 3: Depth-Consistent Hybrid Simulation (The Core Deliverable)",
+          text: "The trained synthetic splats are directly merged into the survey-captured real-world environment. Because both exist within a unified radiance field coordinate system, structural assets sit naturally behind foreground trees, interact with ambient lighting, and maintain sub-centimeter placement accuracy from any viewing angle.",
         },
       ],
     },
