@@ -150,7 +150,7 @@ function LoginForm() {
 
           {/* Footer Note */}
           <div className="mt-8 pt-6 border-t border-slate-800 text-center text-[11px] font-mono text-slate-500">
-            <span>Prepared for Elliot Payne &amp; Truescape Committee</span>
+            <span>Prepared for Truescape Hiring Committee</span>
           </div>
         </div>
       </main>

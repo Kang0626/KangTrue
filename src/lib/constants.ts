@@ -1,6 +1,6 @@
 export const SITE_METADATA = {
   title: "Spatial Visualization & OpenUSD Pipeline | Truescape Production Lead Proposal",
-  description: "A technical proposal and production leadership case study for Elliot Payne, Project Managers, and the Truescape Hiring Committee by Kangsik (Kang) Ko | Candidate for Production Lead, Christchurch, NZ.",
+  description: "A technical proposal and production leadership case study for Project Managers and the Truescape Hiring Committee by Kangsik (Kang) Ko | Candidate for Production Lead, Christchurch, NZ.",
   author: "Kangsik (Kang) Ko",
   role: "Production Lead Candidate | Senior VFX Supervisor & Pipeline Lead",
   location: "Christchurch, New Zealand",
@@ -10,7 +10,7 @@ export const SITE_METADATA = {
 
 export const HERO_CONTENT = {
   eyebrow: "R&D CASE STUDY // TRUESCAPE PRODUCTION LEAD PROPOSAL",
-  targetBadge: "FOR ELLIOT PAYNE, PROJECT MANAGERS & HIRING COMMITTEE",
+  targetBadge: "FOR TRUESCAPE LEADERSHIP & HIRING COMMITTEE",
   headline: "Next-Gen Spatial Visualization: OpenUSD & 3D Gaussian Splatting Pipeline",
   subheadline: "Accelerating infrastructure feasibility and consent delivery by bridging survey-grade photorealism, procedural USD graphs, and frictionless real-time web review.",
   leadQuote: "Bridging 16+ years of VFX supervision with procedural OpenUSD/3DGS workflows — driving Truescape’s Christchurch team to deliver on-time, on-budget, and defensibly accurate visualization for resource consents.",
