@@ -6,12 +6,16 @@ import { CaseStudyCapture } from '@/components/CaseStudyCapture';
 import { CaseStudySynthetic } from '@/components/CaseStudySynthetic';
 import { PipelineToolSection } from '@/components/PipelineToolSection';
 import { AboutSection } from '@/components/AboutSection';
+import { ScrollProgressNav } from '@/components/ScrollProgressNav';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0085ca]/20 selection:text-slate-900">
       {/* Executive Header Navigation Bar */}
       <HeaderNav />
+
+      {/* Floating Vertical Section Scroll Tracker */}
+      <ScrollProgressNav />
 
       {/* Main Single-Page Narrative Flow */}
       <main>
