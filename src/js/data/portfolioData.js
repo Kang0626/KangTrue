@@ -11,7 +11,7 @@ export const ARTIST_INFO = {
   role: "Senior Compositor & VFX Artist",
   subtitle: "16+ Years Experience | Specializing in photorealistic integration, procedural pipelines, and technical problem-solving",
   location: "Christchurch, New Zealand",
-  workRights: "Full NZ Work Rights, Local Resident (Immediate Availability)",
+  workRights: "Permanent Resident Visa Holder (Immediate Availability)",
   email: "kang0626@gmail.com",
   phone: "+64 21 000 0000",
   showreelUrl: "https://vimeo.com/manage/videos",

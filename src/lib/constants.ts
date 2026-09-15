@@ -352,7 +352,7 @@ export const ABOUT_PROFILE = {
   name: "Kangsik (Kang) Ko",
   role: "Senior 3D / VFX Production Lead",
   location: "Christchurch, New Zealand",
-  workStatus: "Full NZ Work Rights · Immediate Office Start",
+  workStatus: "Permanent Resident Visa Holder · Immediate Office Start",
   leadSubtitle: "Bringing 16+ years of 3D visual leadership, 5 years of university CG lecturing, and hands-on OpenUSD/3DGS capability to lead Truescape's Christchurch production delivery.",
   pillars: [
     {
