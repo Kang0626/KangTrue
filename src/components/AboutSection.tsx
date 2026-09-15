@@ -107,7 +107,7 @@ export const AboutSection: React.FC = () => {
                     </div>
                     <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
                       <span className="text-slate-500">Work Rights</span>
-                      <span className="text-emerald-700 font-bold">Full NZ Rights (No Visa Delay)</span>
+                      <span className="text-emerald-700 font-bold">Permanent Resident Visa Holder</span>
                     </div>
                   </div>
                 </div>
