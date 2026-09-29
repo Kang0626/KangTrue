@@ -1,88 +1,102 @@
 'use client';
 
 import React from 'react';
-import { MHIT_PROPOSAL } from '@/lib/constants';
 import { SogViewer } from '@/components/SogViewer';
-import { Sparkles, Eye, Zap, Layers, Cpu, ArrowUpRight } from 'lucide-react';
+import { Layers, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const MhitViewerSection: React.FC = () => {
-  const { interactiveShowcase } = MHIT_PROPOSAL;
-
   return (
     <section id="viewer" className="py-24 sm:py-32 bg-slate-950 text-white scroll-mt-20 border-b border-slate-800 relative overflow-hidden">
       {/* Background Ambience */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#0085ca]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#0085ca]/8 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#0085ca]/20 text-[#38bdf8] border border-[#0085ca]/40 mb-4 uppercase tracking-wider">
-            {interactiveShowcase.badge}
+            03. INTERACTIVE TECHNICAL SHOWCASE
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            {interactiveShowcase.title}
+            Real-Time Radiance Field Streaming Benchmark
           </h2>
           <p className="text-base sm:text-lg text-slate-400 font-light leading-relaxed">
-            {interactiveShowcase.subtitle} Interactive WebGL2 inspection demonstrating procedural boundary clipping, k-NN statistical noise pruning, and compressed octree streaming.
+            Interactive WebGL2 inspection demonstrating client-side octree level-of-detail (LOD) streaming, view-dependent spherical harmonics, and responsive 6-DoF camera navigation.
           </p>
         </div>
 
-        {/* Metric Comparison Strip */}
+        {/* Technical Specification Summary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          {interactiveShowcase.metrics.map((metric, idx) => (
-            <div
-              key={idx}
-              className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-lg flex flex-col justify-between"
-            >
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#38bdf8] block mb-2">
-                {metric.label}
-              </span>
-              <div className="flex items-baseline gap-2 mb-1">
-                <span className="text-xs text-slate-500 line-through font-mono">
-                  {metric.before}
-                </span>
-                <span className="text-xl sm:text-2xl font-black text-white font-mono">
-                  → {metric.after}
-                </span>
-              </div>
-              <span className="text-[11px] text-slate-400 font-mono">
-                {metric.note}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Embedded Interactive 3DGS Viewer Container */}
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden shadow-2xl p-4 sm:p-6 mb-8">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800">
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-300">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>LIVE WEBGL2 THREE.JS 3DGS ENGINE</span>
-              <span className="text-slate-600">|</span>
-              <span className="text-slate-400">Model: caseStudy10_dc_fast.sog</span>
-            </div>
-            <div className="text-xs font-mono text-slate-500">
-              Left Click: Orbit · Right Click: Pan · Scroll: Zoom
-            </div>
+          <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#38bdf8] block mb-1">
+              Gaussian Splat Volume
+            </span>
+            <span className="text-2xl font-black text-white font-mono block mb-1">
+              17.4M Points
+            </span>
+            <span className="text-[11px] text-slate-400 font-mono">
+              Procedurally partitioned for multi-resolution streaming
+            </span>
           </div>
 
-          <div className="w-full h-[520px] sm:h-[620px] rounded-2xl overflow-hidden bg-black/60 relative">
-            <SogViewer sogUrl={interactiveShowcase.sogUrl} />
+          <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#38bdf8] block mb-1">
+              Serialization Format
+            </span>
+            <span className="text-2xl font-black text-white font-mono block mb-1">
+              SOG Chunked LOD
+            </span>
+            <span className="text-[11px] text-slate-400 font-mono">
+              16-bit WebP spatial coordinate packing &amp; quantization
+            </span>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#38bdf8] block mb-1">
+              Client Target Framerate
+            </span>
+            <span className="text-2xl font-black text-white font-mono block mb-1">
+              60 FPS WebGL2
+            </span>
+            <span className="text-[11px] text-slate-400 font-mono">
+              Hardware-accelerated sorting &amp; rasterization
+            </span>
           </div>
         </div>
 
-        {/* Bottom Context Callout */}
+        {/* Interactive 3DGS Viewer */}
+        <div className="mb-8">
+          <SogViewer
+            sogUrl="/assets/case1/the_bowes_museum/meta.json"
+            fallbackUrl="/assets/case1/the_bowes_museum/meta.json"
+            title="Spatial Radiance Field Benchmark — 3DGS WebGL2"
+            splatCount="17.4M Splats (Chunked LOD)"
+            initialDistance={68.0}
+            initialPitch={18.0}
+            initialYaw={25.0}
+            initialTarget={{ x: 0, y: 0, z: 0 }}
+            initialUpright={true}
+            enableAutoRotate={true}
+            modelCenter={{ x: 0.78, y: -0.74, z: 5.2 }}
+            minDistance={6.0}
+            maxDistance={350.0}
+            isReferenceExample={false}
+            enableCameraInspector={false}
+            showCameraInspectorDefault={false}
+          />
+        </div>
+
+        {/* Bottom Technical Context */}
         <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono text-slate-400">
           <div>
-            <strong className="text-white block font-sans text-sm mb-0.5">Procedural Pipeline Provenance</strong>
-            <span>Direct output of Houdini SOP hygiene &amp; deterministic 50-camera Solaris LOPs sampling.</span>
+            <strong className="text-white block font-sans text-sm mb-0.5">Interaction Instructions</strong>
+            <span>Left-click &amp; drag to orbit · Right-click &amp; drag to pan · Scroll wheel to zoom · View presets in top bar.</span>
           </div>
           <Link
-            href="/specs#sog-compression"
+            href="/specs/#sog-compression"
             className="inline-flex items-center gap-1.5 text-[#38bdf8] hover:text-white transition-colors shrink-0 font-bold"
           >
-            <span>Read SOG Compression Specs</span>
+            <span>Examine Compression Architecture</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>

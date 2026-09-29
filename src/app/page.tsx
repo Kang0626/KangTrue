@@ -44,10 +44,7 @@ export default function Home() {
             <a href="#pipeline" className="hover:text-[#0085ca] transition-colors font-medium">04. PIPELINE</a>
             <a href="#alignment" className="hover:text-[#0085ca] transition-colors font-medium">05. HIT LAB NZ</a>
             <a href="#credentials" className="hover:text-[#0085ca] transition-colors font-medium">06. CREDENTIALS</a>
-            <Link href="/showcase/" className="text-[#0085ca] font-bold hover:underline inline-flex items-center gap-1">
-              <Lock className="w-3 h-3" />
-              <span>PRIVATE SHOWCASE</span>
-            </Link>
+            <Link href="/specs/" className="text-slate-600 hover:text-[#0085ca] transition-colors font-medium">RESEARCH SPECS</Link>
           </div>
           <p className="text-slate-800 font-medium">
             Master of Human Interface Technology (MHIT) Research Proposal — Kang (Kangsik) Ko | Christchurch, New Zealand

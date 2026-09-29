@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MHIT_PROPOSAL } from '@/lib/constants';
-import { ShieldCheck, Mail, Phone, MapPin, Award, BookOpen, Lock, ArrowRight, ExternalLink } from 'lucide-react';
+import { ShieldCheck, Mail, Phone, MapPin, Award, BookOpen, ArrowRight, FileText } from 'lucide-react';
 import Link from 'next/link';
 
 export const MhitCredentialsSection: React.FC = () => {
@@ -20,12 +20,12 @@ export const MhitCredentialsSection: React.FC = () => {
             {credentials.title}
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-light leading-relaxed">
-            Bridging 16+ years of visual effects supervision with procedural OpenUSD/3DGS workflows, real-time web engines, and academic CG lecturing.
+            Bridging 16+ years of digital production and visual effects supervision with procedural OpenUSD/3DGS pipelines, real-time web engines, and academic teaching experience.
           </p>
         </div>
 
         {/* Credentials Card Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Profile Info */}
           <div className="lg:col-span-2 p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
@@ -47,7 +47,7 @@ export const MhitCredentialsSection: React.FC = () => {
             {/* Experience Points */}
             <div className="space-y-4">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                Core Domain Expertise &amp; Teaching Background
+                Technical Background &amp; Academic Experience
               </span>
               <div className="space-y-3">
                 {credentials.experience.map((exp, idx) => (
@@ -86,36 +86,36 @@ export const MhitCredentialsSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Actions & Locked Showcase Card */}
-          <div className="p-8 rounded-3xl bg-slate-950 text-white border border-slate-800 shadow-xl flex flex-col justify-between space-y-6">
+          {/* Academic Inquiry & Specs Documentation Card */}
+          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-[#0085ca]/20 border border-[#0085ca]/40 flex items-center justify-center text-[#38bdf8]">
-                <Lock className="w-6 h-6" />
+                <BookOpen className="w-6 h-6" />
               </div>
               <h4 className="text-xl font-bold font-sans text-white tracking-tight">
-                Private Production Showcase
+                Research Documentation
               </h4>
-              <p className="text-xs text-slate-400 font-light leading-relaxed">
-                Contains complete industrial R&amp;D documentation, full-length reality capture video footage, and procedural Houdini SOP node networks.
+              <p className="text-xs text-slate-300 font-light leading-relaxed">
+                Detailed architecture specifications covering procedural Houdini node algorithms, OpenUSD scene graph schemas, and WebGL streaming metrics are documented in the companion technical whitepaper.
               </p>
             </div>
 
-            <div className="space-y-3 pt-4 border-t border-slate-800">
-              <Link
-                href="/showcase/"
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#0085ca] hover:bg-[#006ba8] text-white text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-lg shadow-[#0085ca]/25 cursor-pointer"
-              >
-                <Lock className="w-3.5 h-3.5" />
-                <span>Open Private Showcase</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+            <div className="space-y-3 pt-6 border-t border-slate-800">
               <Link
                 href="/specs/"
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-mono font-medium transition-colors border border-slate-800"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#0085ca] hover:bg-[#006ba8] text-white text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer"
               >
-                <BookOpen className="w-3.5 h-3.5" />
+                <FileText className="w-3.5 h-3.5" />
                 <span>View Full Architecture Specs</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
+              <a
+                href={`mailto:${applicant.email}?subject=HIT%20Lab%20NZ%20MHIT%20Research%20Inquiry%20-%20Kang%20Ko`}
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-medium transition-colors border border-slate-700"
+              >
+                <Mail className="w-3.5 h-3.5" />
+                <span>Direct Academic Correspondence</span>
+              </a>
             </div>
           </div>
         </div>

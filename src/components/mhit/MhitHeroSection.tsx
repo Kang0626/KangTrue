@@ -35,8 +35,8 @@ export const MhitHeroSection: React.FC = () => {
         <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-light max-w-4xl mb-12">
           A Master of Human Interface Technology (MHIT) research proposal by{' '}
           <strong className="font-semibold text-slate-900">{applicant.name}</strong> ({applicant.role}).{' '}
-          Demonstrating how procedural OpenUSD scene graphs and survey-referenced 3D Gaussian Splatting (3DGS) resolve the critical{' '}
-          <span className="text-[#0085ca] font-medium">"Fidelity-Latency Dilemma"</span> in collaborative spatial computing.
+          Investigating how procedural OpenUSD scene graphs and survey-calibrated 3D Gaussian Splatting (3DGS) address the{' '}
+          <span className="text-[#0085ca] font-medium">"Fidelity-Latency Dilemma"</span> in collaborative spatial computing and immersive telepresence.
         </p>
 
         {/* Telemetry Metric Cards */}

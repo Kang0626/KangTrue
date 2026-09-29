@@ -546,7 +546,7 @@ export const MHIT_PROPOSAL = {
   targetLab: "Human Interface Technology Laboratory New Zealand (HIT Lab NZ) · University of Canterbury",
   applicant: {
     name: "Kang (Kangsik) Ko",
-    role: "16+ Years VFX Supervisor & Procedural Pipeline Lead",
+    role: "Senior 3D / VFX Specialist & Procedural TD",
     location: "Christchurch, New Zealand",
     immigration: "NZ Permanent Resident (Immediate Start · No Visa Constraints)",
     email: "kang0626@gmail.com",
@@ -559,9 +559,9 @@ export const MHIT_PROPOSAL = {
     problem: "Contemporary Mixed Reality (MR) and immersive telepresence systems frequently struggle with the 'Fidelity-Latency Dilemma': traditional polygonal photogrammetry yields heavy, artifact-prone meshes, while raw Neural Radiance Fields (NeRFs) and 3D Gaussian Splatting (3DGS) lack structured scene graphs, dynamic occlusion handling, and scale determinism required for collaborative engineering inspections.",
     framework: "This research demonstrates an end-to-end framework integrating Houdini Solaris (OpenUSD), procedural statistical point-cleansing (SOPs), and survey-referenced 3DGS training. By unifying real-world radiance fields with synthetic parametric assets, this pipeline establishes a foundation for sub-centimeter, perceptually consistent spatial collaboration across lightweight WebGL/WebXR clients.",
     keyMetrics: [
-      { label: "Precision Target", value: "Sub-Centimeter", desc: "Survey-calibrated datum anchoring" },
-      { label: "Client Framerate", value: "60+ FPS Locked", desc: "In-browser WebGL/WebXR streaming" },
-      { label: "Memory Optimization", value: "-95% Bandwidth", desc: "Procedural k-NN & SPZ compression" },
+      { label: "Spatial Alignment", value: "Metric Datum", desc: "Survey-referenced coordinate alignment" },
+      { label: "Target Framerate", value: "60 FPS Target", desc: "Client-side WebGL2 evaluation" },
+      { label: "Optimization Method", value: "Octree LOD", desc: "Procedural pruning & WebP quantization" },
     ]
   },
   hypotheses: [
@@ -589,11 +589,11 @@ export const MHIT_PROPOSAL = {
     title: "Live 3DGS Spatial Environment Viewer",
     subtitle: "Real-time radiance field streaming with procedural boundary clipping and optimized volumetric density.",
     metrics: [
-      { label: "Gaussian Point Budget", before: "~2.4M Splats", after: "~850K Pruned", note: "Procedural k-NN hygiene" },
-      { label: "Asset Storage Footprint", before: "380MB (.ply)", after: "18.4MB (.spz)", note: "Quantized octree streaming" },
-      { label: "Runtime Performance", before: "Stuttering Mesh", after: "60 FPS Locked", note: "Browser-based WebGL/WebXR" },
+      { label: "Gaussian Point Volume", before: "Raw Photogrammetry", after: "Octree Partitioned", note: "Procedural density optimization" },
+      { label: "Network Transmission", before: "Uncompressed PLY", after: "SOG Chunked LOD", note: "16-bit WebP coordinate packing" },
+      { label: "Client Target Runtime", before: "Variable Framerate", after: "60 FPS WebGL2", note: "Hardware-accelerated rasterization" },
     ],
-    sogUrl: "/assets/case2/caseStudy10_dc_fast.sog"
+    sogUrl: "/assets/case1/the_bowes_museum/meta.json"
   },
   pipelineArchitecture: {
     badge: "04. PIPELINE ARCHITECTURE",

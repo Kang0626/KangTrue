@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, FileText, Lock, ShieldCheck } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 
 export const MhitHeaderNav: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -34,8 +34,8 @@ export const MhitHeaderNav: React.FC = () => {
           </div>
         </Link>
 
-        {/* Right: Desktop Navigation Links + Specs + Showcase Badge */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
+        {/* Right: Desktop Navigation Links + Specs */}
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -48,31 +48,15 @@ export const MhitHeaderNav: React.FC = () => {
 
           <Link
             href="/specs/"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-700 hover:bg-[#0085ca] hover:text-white transition-all shadow-2xs border border-slate-200"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#0085ca]/10 text-[#0085ca] border border-[#0085ca]/30 hover:bg-[#0085ca] hover:text-white transition-all shadow-2xs"
           >
             <FileText className="w-3.5 h-3.5" />
-            <span>SPECS</span>
-          </Link>
-
-          <Link
-            href="/showcase/"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#0085ca]/10 text-[#0085ca] border border-[#0085ca]/30 hover:bg-[#0085ca] hover:text-white transition-all shadow-2xs"
-            title="Authorized Private Production Showcase (Access Restricted)"
-          >
-            <Lock className="w-3.5 h-3.5" />
-            <span>SHOWCASE</span>
+            <span>RESEARCH SPECS</span>
           </Link>
         </nav>
 
         {/* Mobile Hamburger Button */}
         <div className="flex items-center gap-2 lg:hidden">
-          <Link
-            href="/showcase/"
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-[#0085ca]/10 text-[#0085ca] border border-[#0085ca]/30"
-          >
-            <Lock className="w-3 h-3" />
-            <span>SHOWCASE</span>
-          </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-2 text-slate-700 hover:text-slate-950 focus:outline-none"
@@ -96,7 +80,7 @@ export const MhitHeaderNav: React.FC = () => {
               {link.label}
             </a>
           ))}
-          <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+          <div className="pt-4 border-t border-slate-100">
             <Link
               href="/specs/"
               onClick={() => setMobileOpen(false)}
@@ -104,14 +88,6 @@ export const MhitHeaderNav: React.FC = () => {
             >
               <FileText className="w-4 h-4" />
               <span>RESEARCH ARCHITECTURE &amp; SPECS</span>
-            </Link>
-            <Link
-              href="/showcase/"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-mono font-bold bg-[#0085ca] text-white shadow-md shadow-[#0085ca]/20"
-            >
-              <Lock className="w-4 h-4" />
-              <span>PRIVATE PRODUCTION SHOWCASE 🔒</span>
             </Link>
           </div>
         </div>
