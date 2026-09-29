@@ -1,15 +1,23 @@
-﻿import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
     const { password } = await req.json();
-    const correctPassword = process.env.SITE_PASSWORD || 'Truescape!2026';
+    const correctPassword = process.env.SITE_PASSWORD || 'kks0415293';
 
     if (password === correctPassword) {
       const response = NextResponse.json({ success: true, message: 'Authenticated' });
+      // Invalidate old legacy truescape cookie
       response.cookies.set({
         name: 'truescape_auth',
-        value: 'verified_2026',
+        value: '',
+        path: '/',
+        maxAge: 0,
+      });
+      // Set new authorized cookie
+      response.cookies.set({
+        name: 'kks_portfolio_auth',
+        value: 'kks_authorized_access_2026',
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',

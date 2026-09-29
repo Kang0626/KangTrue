@@ -1,21 +1,28 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const authCookie = request.cookies.get('truescape_auth')?.value;
+  const authCookie = request.cookies.get('kks_portfolio_auth')?.value;
   const { pathname } = request.nextUrl;
 
-  // Allow static assets, next internal files, and api auth routes
+  const isAuthenticated = authCookie === 'kks_authorized_access_2026';
+
+  // Allow next internal files and api auth routes
   if (
     pathname.startsWith('/api/auth') ||
     pathname.startsWith('/_next') ||
-    pathname.startsWith('/assets') ||
-    pathname.includes('.')
+    pathname === '/favicon.ico'
   ) {
     return NextResponse.next();
   }
 
-  const isAuthenticated = authCookie === 'verified_2026';
+  // Block unauthorized direct access to assets (3DGS models, GIFs, videos, datasets)
+  if (pathname.startsWith('/assets/')) {
+    if (!isAuthenticated) {
+      return new NextResponse('Access Denied: Unauthorized Asset Access', { status: 403 });
+    }
+    return NextResponse.next();
+  }
 
   // If user is on /login/
   if (pathname.startsWith('/login')) {
@@ -38,5 +45,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api/auth|_next/static|_next/image|assets|favicon.ico).*)'],
+  matcher: ['/((?!api/auth|_next/static|_next/image|favicon.ico).*)'],
 };

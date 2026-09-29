@@ -34,7 +34,7 @@ function LoginForm() {
         router.push(redirectTarget);
         router.refresh();
       } else {
-        setErrorMsg(data.message || 'Incorrect password. Please verify credentials.');
+        setErrorMsg(data.message || 'Incorrect password. Access denied.');
         setIsLoading(false);
       }
     } catch {
@@ -59,14 +59,14 @@ function LoginForm() {
               KANGSIK KO
             </span>
             <span className="text-[8px] font-mono font-bold text-[#38bdf8] uppercase tracking-[0.2em] mt-0.5">
-              PRODUCTION LEAD PROPOSAL
+              CONFIDENTIAL R&amp;D ARCHIVE
             </span>
           </div>
         </div>
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-400">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-          <span>Restricted Portal</span>
+          <span>Private Access</span>
         </div>
       </header>
 
@@ -83,10 +83,10 @@ function LoginForm() {
               Restricted Access
             </span>
             <h1 className="text-2xl sm:text-3xl font-bold font-sans tracking-tight text-white">
-              Password Protected
+              Private R&amp;D Archive
             </h1>
             <p className="text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
-              This portfolio contains confidential R&amp;D documentation and production leadership case studies for Truescape.
+              This archive contains confidential 3D Gaussian Splatting and OpenUSD R&amp;D documentation, custom pipeline controllers, and production case studies. Access is strictly limited to authorized personnel.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ function LoginForm() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
               <label htmlFor="password" className="text-xs font-mono text-slate-300 font-medium block">
-                Enter Password
+                Security Password
               </label>
 
               <div className="relative">
@@ -103,7 +103,7 @@ function LoginForm() {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
+                  placeholder="Enter Password"
                   autoFocus
                   required
                   className="w-full pl-4 pr-11 py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-white font-mono text-sm placeholder:text-slate-600 focus:outline-none focus:border-[#0085ca] focus:ring-1 focus:ring-[#0085ca] transition-all"
@@ -112,7 +112,7 @@ function LoginForm() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 transition-colors p-1"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 transition-colors p-1 cursor-pointer"
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -141,7 +141,7 @@ function LoginForm() {
                 </>
               ) : (
                 <>
-                  <span>Unlock Access</span>
+                  <span>Unlock Archive</span>
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}
@@ -150,7 +150,7 @@ function LoginForm() {
 
           {/* Footer Note */}
           <div className="mt-8 pt-6 border-t border-slate-800 text-center text-[11px] font-mono text-slate-500">
-            <span>Prepared for Truescape Hiring Committee</span>
+            <span>Authorized Personnel Only · Strict Access Control</span>
           </div>
         </div>
       </main>
