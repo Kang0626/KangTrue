@@ -1,8 +1,8 @@
 export const SITE_METADATA = {
-  title: "Spatial Visualization & OpenUSD Pipeline | Truescape Production Lead Proposal",
-  description: "A technical proposal and production leadership case study for Project Managers and the Truescape Hiring Committee by Kangsik (Kang) Ko | Candidate for Production Lead, Christchurch, NZ.",
+  title: "Next-Gen Spatial Visualization: OpenUSD & 3DGS Pipeline",
+  description: "Proprietary 3D Gaussian Splatting and OpenUSD R&D case studies and procedural pipeline documentation by Kangsik (Kang) Ko | Senior VFX Supervisor & Spatial Pipeline Lead.",
   author: "Kangsik (Kang) Ko",
-  role: "Production Lead Candidate | Senior VFX Supervisor & Pipeline Lead",
+  role: "Senior VFX Supervisor & Spatial Pipeline Lead",
   location: "Christchurch, New Zealand",
   email: "kang0626@gmail.com",
   linkedin: "https://www.linkedin.com/in/kangsik-ko/",
