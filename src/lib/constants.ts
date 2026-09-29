@@ -379,12 +379,12 @@ export const ABOUT_PROFILE = {
 };
 
 export const TECHNICAL_SPECS = {
-  badge: "TECHNICAL SPECIFICATION & ENGINEERING WHITEPAPER",
-  title: "Truescape Next-Gen Spatial Pipeline: Technical Architecture Specification",
-  version: "v2.248 (Production Ready)",
+  badge: "TECHNICAL SPECIFICATION & RESEARCH METHODOLOGY",
+  title: "Spatial Computing & OpenUSD Pipeline: Technical Architecture Specification",
+  version: "v2.248 (MHIT Research Edition)",
   lastUpdated: "September 2026",
-  author: "Kangsik (Kang) Ko · Senior VFX Supervisor & Candidate for Production Lead",
-  lead: "Exhaustive technical documentation of procedural algorithms, node graph architectures, compression mechanics, and legal defensibility protocols for Truescape's infrastructure delivery.",
+  author: "Kang (Kangsik) Ko · Candidate for Master of Human Interface Technology (MHIT)",
+  lead: "Exhaustive technical documentation of procedural algorithms, node graph architectures, compression mechanics, and spatial verification protocols for HIT Lab NZ immersive telepresence research.",
   sections: [
     {
       id: "capture-standards",
@@ -539,3 +539,136 @@ export const TECHNICAL_SPECS = {
     },
   ],
 };
+
+export const MHIT_PROPOSAL = {
+  title: "High-Fidelity Spatial Computing & Radiance Field Pipelines for Immersive Telepresence",
+  subtitle: "Master of Human Interface Technology (MHIT) Research Proposal & Interactive Portfolio",
+  targetLab: "Human Interface Technology Laboratory New Zealand (HIT Lab NZ) · University of Canterbury",
+  applicant: {
+    name: "Kang (Kangsik) Ko",
+    role: "16+ Years VFX Supervisor & Procedural Pipeline Lead",
+    location: "Christchurch, New Zealand",
+    immigration: "NZ Permanent Resident (Immediate Start · No Visa Constraints)",
+    email: "kang0626@gmail.com",
+    phone: "021 128 0909",
+    linkedin: "https://www.linkedin.com/in/kangsik-ko/",
+  },
+  executiveSummary: {
+    badge: "01. EXECUTIVE SUMMARY & RESEARCH MOTIVATION",
+    title: "Resolving the Fidelity-Latency Dilemma in Spatial Telepresence",
+    problem: "Contemporary Mixed Reality (MR) and immersive telepresence systems frequently struggle with the 'Fidelity-Latency Dilemma': traditional polygonal photogrammetry yields heavy, artifact-prone meshes, while raw Neural Radiance Fields (NeRFs) and 3D Gaussian Splatting (3DGS) lack structured scene graphs, dynamic occlusion handling, and scale determinism required for collaborative engineering inspections.",
+    framework: "This research demonstrates an end-to-end framework integrating Houdini Solaris (OpenUSD), procedural statistical point-cleansing (SOPs), and survey-referenced 3DGS training. By unifying real-world radiance fields with synthetic parametric assets, this pipeline establishes a foundation for sub-centimeter, perceptually consistent spatial collaboration across lightweight WebGL/WebXR clients.",
+    keyMetrics: [
+      { label: "Precision Target", value: "Sub-Centimeter", desc: "Survey-calibrated datum anchoring" },
+      { label: "Client Framerate", value: "60+ FPS Locked", desc: "In-browser WebGL/WebXR streaming" },
+      { label: "Memory Optimization", value: "-95% Bandwidth", desc: "Procedural k-NN & SPZ compression" },
+    ]
+  },
+  hypotheses: [
+    {
+      id: "hyp-a",
+      code: "HYPOTHESIS A",
+      title: "Perceptual Depth Consistency in Hybrid Radiance Fields",
+      problem: "In collaborative MR, synthetic assets floating over unstructured scan backdrops often suffer from sorting errors and unnatural lighting, breaking the user's depth perception and spatial presence.",
+      research: "Evaluating how survey-calibrated OpenUSD scene graphs merged with synthetic radiance fields alter user task efficiency, distance estimation error, and cognitive workload during remote infrastructure inspection.",
+      metrics: ["Distance Estimation Error (mm)", "Depth Sorting Consistency", "Cognitive Load (NASA-TLX)"],
+      icon: "Layers"
+    },
+    {
+      id: "hyp-b",
+      code: "HYPOTHESIS B",
+      title: "Bandwidth-Adaptive 3DGS Streaming for Telepresence",
+      problem: "Raw .ply splat representations (often >500MB per capture) prevent real-time multi-user streaming over commodity network connections.",
+      research: "Validating whether procedural outlier reduction (k-NN spatial filtering + opacity pruning) combined with quantized spherical harmonics (.spz compression) preserves essential spatial cues while maintaining 60+ FPS on standalone HMD and WebXR interfaces.",
+      metrics: ["380MB → 18.4MB (.spz)", "Frametime P99 < 16.6ms", "Perceptual SSIM/PSNR Score"],
+      icon: "Cpu"
+    }
+  ],
+  interactiveShowcase: {
+    badge: "03. INTERACTIVE TECHNICAL SHOWCASE",
+    title: "Live 3DGS Spatial Environment Viewer",
+    subtitle: "Real-time radiance field streaming with procedural boundary clipping and optimized volumetric density.",
+    metrics: [
+      { label: "Gaussian Point Budget", before: "~2.4M Splats", after: "~850K Pruned", note: "Procedural k-NN hygiene" },
+      { label: "Asset Storage Footprint", before: "380MB (.ply)", after: "18.4MB (.spz)", note: "Quantized octree streaming" },
+      { label: "Runtime Performance", before: "Stuttering Mesh", after: "60 FPS Locked", note: "Browser-based WebGL/WebXR" },
+    ],
+    sogUrl: "/assets/case2/caseStudy10_dc_fast.sog"
+  },
+  pipelineArchitecture: {
+    badge: "04. PIPELINE ARCHITECTURE",
+    title: "Solaris (LOPs) to 3DGS Synthesis Framework",
+    subtitle: "Automated procedural translation bridging CAD/BIM engineering assets with real-world captured radiance.",
+    steps: [
+      {
+        num: "01",
+        title: "CAD / BIM Engineering Assets Ingestion",
+        desc: "Strict OpenUSD stage hygiene, MaterialX shader binding, and millimeter datum calibration in Houdini Solaris."
+      },
+      {
+        num: "02",
+        title: "Deterministic 50-Viewpoint Rigging",
+        desc: "Procedurally generating hemispherical camera dome arrays around structures to ensure uniform viewpoint density."
+      },
+      {
+        num: "03",
+        title: "Karma XPU Batch Ground Truth Packaging",
+        desc: "Automated PDG/TOPs background rendering of multi-camera EXR passes and depth buffers without viewport interruption."
+      },
+      {
+        num: "04",
+        title: "Hybrid Spatial Merging & WebXR Streaming",
+        desc: "Depth-sorted radiance composite allowing synthetic structures to sit naturally behind volumetric foliage at 60 FPS."
+      }
+    ],
+    technicalContributions: [
+      {
+        title: "Deterministic Viewpoint Sampling",
+        desc: "Procedurally rig multi-camera rigs around arbitrary volumes to guarantee uniform spatial coverage and eliminate perspective bias."
+      },
+      {
+        title: "Automated Stage Hygiene",
+        desc: "Flatten OpenUSD sublayer references and resolve material binding errors via automated PDG/TOPs workflows before training execution."
+      },
+      {
+        title: "Occlusion-Aware Radiance Blending",
+        desc: "Eliminates manual 2D matte cutting by allowing synthetic structural elements to naturally sit behind real-world volumetric foliage and foreground geometry."
+      }
+    ]
+  },
+  hitLabAlignment: {
+    badge: "05. ALIGNMENT WITH HIT LAB NZ",
+    title: "Alignment with HIT Lab NZ Research Streams",
+    subtitle: "Direct technical translation of procedural radiance field engineering into University of Canterbury research domains.",
+    domains: [
+      {
+        domain: "Immersive Telepresence & Shared Workspaces",
+        contribution: "Real-time radiance streaming with ultra-low memory footprint (.spz / .sog).",
+        output: "Quantitative user study on remote multi-user site inspection vs. conventional 2D video conferencing."
+      },
+      {
+        domain: "Digital Twins & Industrial Simulation",
+        contribution: "OpenUSD integration allowing real-time CAD model interchange within scanned environments.",
+        output: "Investigating spatial situational awareness and decision latency in safety-critical engineering tasks."
+      },
+      {
+        domain: "Spatial Interaction & Perceptual Fidelity",
+        contribution: "Sub-centimeter camera alignment and accurate depth sorting.",
+        output: "Validating visual fidelity thresholds (SSIM, PSNR) against human depth-judgment accuracy in VR/AR."
+      }
+    ]
+  },
+  credentials: {
+    badge: "06. ACADEMIC & PROFESSIONAL CREDENTIALS",
+    title: "Applicant Background & Technical Readiness",
+    name: "Kang (Kangsik) Ko",
+    immigrationStatus: "New Zealand Permanent Resident (No visa sponsorship or working constraints)",
+    location: "Christchurch Central, Canterbury",
+    experience: [
+      "16+ Years as Visual Effects Supervisor & Technical Director (Digital Compositing, LookDev, Pipeline Automation)",
+      "Extensive experience in Houdini VEX/Python, OpenUSD/Solaris, Unreal Engine, and WebGL viewer implementation",
+      "Academic teaching background (5 years as university lecturer in Korea)"
+    ]
+  }
+};
+

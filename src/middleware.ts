@@ -16,31 +16,26 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Block unauthorized direct access to assets (3DGS models, GIFs, videos, datasets)
-  if (pathname.startsWith('/assets/')) {
+  // Strictly protected private route: /showcase (and any subroutes) - Only for Kang with password
+  if (pathname.startsWith('/showcase')) {
     if (!isAuthenticated) {
-      return new NextResponse('Access Denied: Unauthorized Asset Access', { status: 403 });
+      const loginUrl = new URL('/login/', request.url);
+      loginUrl.searchParams.set('redirect', pathname);
+      return NextResponse.redirect(loginUrl);
     }
     return NextResponse.next();
   }
 
-  // If user is on /login/
+  // If user is already authenticated and visits /login, redirect to /showcase/
   if (pathname.startsWith('/login')) {
     if (isAuthenticated) {
-      return NextResponse.redirect(new URL('/', request.url));
+      const redirectTarget = request.nextUrl.searchParams.get('redirect') || '/showcase/';
+      return NextResponse.redirect(new URL(redirectTarget, request.url));
     }
     return NextResponse.next();
   }
 
-  // If not authenticated, redirect to /login/
-  if (!isAuthenticated) {
-    const loginUrl = new URL('/login/', request.url);
-    if (pathname !== '/') {
-      loginUrl.searchParams.set('redirect', pathname);
-    }
-    return NextResponse.redirect(loginUrl);
-  }
-
+  // All other routes: / (MHIT Proposal), /specs (Research Methodology), and public assets
   return NextResponse.next();
 }
 

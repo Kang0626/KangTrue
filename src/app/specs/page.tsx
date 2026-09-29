@@ -45,13 +45,13 @@ export default function TechnicalSpecsPage() {
             className="inline-flex items-center gap-2 text-xs font-mono font-bold text-slate-700 hover:text-[#0085ca] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Return to Portfolio Review</span>
+            <span>Return to MHIT Research Proposal</span>
           </Link>
 
           <div className="hidden sm:flex items-center gap-3">
             <span className="text-xs font-mono text-slate-400">DOC REF:</span>
             <span className="text-xs font-mono font-bold text-[#0085ca] bg-sky-50 border border-sky-200 px-2.5 py-0.5 rounded">
-              TRUESCAPE-3DGS-USD-2026
+              HITLAB-MHIT-3DGS-USD-2026
             </span>
           </div>
 
@@ -127,7 +127,7 @@ export default function TechnicalSpecsPage() {
                   className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-mono font-semibold transition-colors"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Back to Main Portfolio</span>
+                  <span>Back to MHIT Proposal</span>
                 </Link>
               </div>
             </div>

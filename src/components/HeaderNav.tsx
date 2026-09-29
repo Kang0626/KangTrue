@@ -16,27 +16,27 @@ export const HeaderNav: React.FC = () => {
   };
 
   const navLinks = [
-    { label: 'OVERVIEW', href: '/#hero' },
-    { label: 'STRATEGY', href: '/#strategic-value' },
-    { label: '01. CAPTURE', href: '/#case-01' },
-    { label: '02. SYNTHETIC', href: '/#case-02' },
-    { label: 'PIPELINE', href: '/#pipeline-tooling' },
-    { label: 'CONTACT', href: '/#contact' },
+    { label: 'OVERVIEW', href: '/showcase#hero' },
+    { label: 'STRATEGY', href: '/showcase#strategic-value' },
+    { label: '01. CAPTURE', href: '/showcase#case-01' },
+    { label: '02. SYNTHETIC', href: '/showcase#case-02' },
+    { label: 'PIPELINE', href: '/showcase#pipeline-tooling' },
+    { label: 'ABOUT', href: '/showcase#contact' },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 h-20 flex items-center shadow-xs transition-all">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full flex items-center justify-between">
-        {/* Left: KANGSIK KO & PRODUCTION LEAD PROPOSAL */}
-        <Link href="/#hero" className="flex items-center gap-3 group">
+        {/* Left: KANGSIK KO & SPATIAL R&D SHOWCASE */}
+        <Link href="/showcase#hero" className="flex items-center gap-3 group">
           <div className="flex flex-col w-fit">
             <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 font-sans group-hover:text-[#0085ca] transition-colors select-none leading-none whitespace-nowrap">
               KANGSIK KO
             </span>
             <div className="w-full flex items-center justify-between text-[7.5px] sm:text-[8.5px] font-mono font-bold text-[#0085ca] uppercase select-none mt-1.5 tracking-[0.06em]">
-              <span>PRODUCTION</span>
-              <span>LEAD</span>
-              <span className="-mr-[0.06em]">PROPOSAL</span>
+              <span>SPATIAL</span>
+              <span>R&amp;D</span>
+              <span className="-mr-[0.06em]">SHOWCASE</span>
             </div>
           </div>
         </Link>
