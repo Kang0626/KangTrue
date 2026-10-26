@@ -9,11 +9,11 @@ export const SITE_METADATA = {
 };
 
 export const HERO_CONTENT = {
-  eyebrow: "R&D CASE STUDY // TRUESCAPE PRODUCTION LEAD PROPOSAL",
-  targetBadge: "FOR TRUESCAPE LEADERSHIP & HIRING COMMITTEE",
+  eyebrow: "INDEPENDENT R&D & CASE STUDIES // 3DGS & OPENUSD",
+  targetBadge: "HIT LAB NZ RESEARCH DEMONSTRATION",
   headline: "Next-Gen Spatial Visualization: OpenUSD & 3D Gaussian Splatting Pipeline",
   subheadline: "Accelerating infrastructure feasibility and consent delivery by bridging survey-grade photorealism, procedural USD graphs, and frictionless real-time web review.",
-  leadQuote: "Bridging 16+ years of VFX supervision with procedural OpenUSD/3DGS workflows — driving Truescape’s Christchurch team to deliver on-time, on-budget, and defensibly accurate visualization for resource consents.",
+  leadQuote: "Integrating 16+ years of VFX supervision with procedural OpenUSD and 3D Gaussian Splatting workflows for real-time spatial computing.",
 };
 
 export const TECH_VALUES = [
@@ -295,14 +295,14 @@ export const PIPELINE_TOOLING = {
     badge: "AGENTIC AUTOMATION & HEADLESS PYTHON",
     title: "SideFX Houdini + Google Antigravity MCP Service",
     desc: "A custom Model Context Protocol (MCP) server that empowers production leads to dispatch complex Houdini setups, camera arrays, and TOPs render batches through natural language commands.",
-    reusability: "Engineered entirely with modular Python (hou API) scripts that integrate directly into Truescape's existing network file shares and studio environment without proprietary dependencies.",
+    reusability: "Engineered entirely with modular Python (hou API) scripts that integrate directly into standard OpenUSD and Houdini environments without proprietary dependencies.",
     highlights: [
       "Natural language prompts → Automated LOPs stage construction",
       "Asynchronous TOPs scheduler dispatch (Dirty & Cook)",
       "Structured JSON telemetry catching exceptions instantaneously",
     ],
     codeSnippet: `# ==============================================================================
-# Truescape 3DGS Pipeline Controller - MCP Houdini Service Automation
+# 3DGS Pipeline Controller - MCP Houdini Service Automation
 # Author: Kangsik (Kang) Ko | Senior VFX Supervisor & Production Lead Candidate
 # Co-Engineered with Google Antigravity & AI Agentic Coding
 # ==============================================================================
@@ -315,7 +315,7 @@ def setup_synthetic_3dgs_rig(asset_usd_path: str, dome_cam_count: int = 50, dome
     Headless automation routine triggered via Antigravity MCP CLI.
     Builds Solaris LOPs stage, imports infrastructure USD, and generates camera dome.
     """
-    stage_lop = hou.node("/stage").createNode("stage", "truescape_3dgs_synth_rig")
+    stage_lop = hou.node("/stage").createNode("stage", "hybrid_3dgs_synth_rig")
     
     # 1. USD Asset Reference
     sublayer = stage_lop.createNode("sublayer", "import_client_usd")
@@ -353,7 +353,7 @@ export const ABOUT_PROFILE = {
   role: "Senior 3D / VFX Production Lead",
   location: "Christchurch, New Zealand",
   workStatus: "Permanent Resident Visa Holder · Immediate Office Start",
-  leadSubtitle: "Bringing 16+ years of 3D visual leadership, 5 years of university CG lecturing, and hands-on OpenUSD/3DGS capability to lead Truescape's Christchurch production delivery.",
+  leadSubtitle: "Bringing 16+ years of 3D visual leadership, 5 years of university CG lecturing, and hands-on OpenUSD/3DGS research capability.",
   pillars: [
     {
       title: "Production Scheduling & Delivery",
@@ -521,19 +521,19 @@ export const TECHNICAL_SPECS = {
       details: [
         {
           label: "Spatial Exploration & Sightlines",
-          text: "Legacy: Restricted to pre-baked camera paths with hidden blind spots. Truescape 3DGS: Full 6-DoF real-time navigation across any corridor, viewpoint, or elevation in-browser.",
+          text: "Legacy: Restricted to pre-baked camera paths with hidden blind spots. Hybrid 3DGS: Full 6-DoF real-time navigation across any corridor, viewpoint, or elevation in-browser.",
         },
         {
           label: "Camera Tracking & Matchmoving Overhead",
-          text: "Legacy: Days lost per sequence micro-solving 3D camera tracks and lens distortion grids. Truescape 3DGS: Zero matchmoving required; volumetric captures directly align to survey GIS/LiDAR coordinates.",
+          text: "Legacy: Days lost per sequence micro-solving 3D camera tracks and lens distortion grids. Hybrid 3DGS: Zero matchmoving required; volumetric captures directly align to survey GIS/LiDAR coordinates.",
         },
         {
           label: "Artist & TD Focus",
-          text: "Legacy: Disproportionate hours consumed by plate cleanup, track stabilization, and matte painting. Truescape 3DGS: 100% of production energy dedicated to asset quality, photorealism, and engineering accuracy.",
+          text: "Legacy: Disproportionate hours consumed by plate cleanup, track stabilization, and matte painting. Hybrid 3DGS: 100% of production energy dedicated to asset quality, photorealism, and engineering accuracy.",
         },
         {
           label: "Revision Turnaround & Agility",
-          text: "Legacy: Angle change requests require re-filming or complete 3D scene re-renders via offline render farms. Truescape 3DGS: Instant camera repositioning during live hearings with zero re-rendering turnaround delay.",
+          text: "Legacy: Angle change requests require re-filming or complete 3D scene re-renders via offline render farms. Hybrid 3DGS: Instant camera repositioning during live hearings with zero re-rendering turnaround delay.",
         },
       ],
     },

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, FileText, Lock } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Lock } from 'lucide-react';
 
 export const HeaderNav: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -16,54 +16,49 @@ export const HeaderNav: React.FC = () => {
   };
 
   const navLinks = [
-    { label: 'OVERVIEW', href: '/showcase#hero' },
-    { label: 'STRATEGY', href: '/showcase#strategic-value' },
-    { label: '01. CAPTURE', href: '/showcase#case-01' },
-    { label: '02. SYNTHETIC', href: '/showcase#case-02' },
-    { label: 'PIPELINE', href: '/showcase#pipeline-tooling' },
-    { label: 'ABOUT', href: '/showcase#contact' },
+    { label: '01. 3DGS RESEARCH', href: '#case-01' },
+    { label: '02. 3DGS + USD COMPOSITING', href: '#case-02' },
+    { label: '03. PIPELINE TOOL', href: '#pipeline-tooling' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 h-20 flex items-center shadow-xs transition-all">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full flex items-center justify-between">
-        {/* Left: KANGSIK KO & SPATIAL R&D SHOWCASE */}
-        <Link href="/showcase#hero" className="flex items-center gap-3 group">
-          <div className="flex flex-col w-fit">
-            <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 font-sans group-hover:text-[#0085ca] transition-colors select-none leading-none whitespace-nowrap">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 h-16 flex items-center shadow-2xs transition-all">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full flex items-center justify-between">
+        {/* Left: Presenter & Research Showcase Title */}
+        <a href="#hero" className="flex items-center gap-3 group">
+          <div className="flex flex-col">
+            <span className="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 font-sans group-hover:text-[#0085ca] transition-colors leading-none">
               KANGSIK KO
             </span>
-            <div className="w-full flex items-center justify-between text-[7.5px] sm:text-[8.5px] font-mono font-bold text-[#0085ca] uppercase select-none mt-1.5 tracking-[0.06em]">
-              <span>SPATIAL</span>
-              <span>R&amp;D</span>
-              <span className="-mr-[0.06em]">SHOWCASE</span>
-            </div>
+            <span className="text-[9px] font-mono font-bold text-[#0085ca] uppercase tracking-[0.14em] mt-1">
+              3DGS &amp; OPENUSD R&amp;D CASE STUDIES
+            </span>
           </div>
-        </Link>
+        </a>
 
-        {/* Right: Desktop Navigation Links + Specs Badge */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-7 xl:gap-8">
+        {/* Right: Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs font-sans font-semibold uppercase tracking-[0.16em] text-slate-600 hover:text-[#0085ca] transition-colors"
+              className="text-xs font-mono font-bold uppercase tracking-wider text-slate-600 hover:text-[#0085ca] transition-colors"
             >
               {link.label}
             </a>
           ))}
           <Link
-            href="/specs/"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#0085ca]/10 text-[#0085ca] border border-[#0085ca]/30 hover:bg-[#0085ca] hover:text-white transition-all shadow-2xs"
+            href="/"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-100 text-slate-700 border border-slate-200 hover:bg-[#0085ca] hover:text-white hover:border-[#0085ca] transition-all"
           >
-            <FileText className="w-3.5 h-3.5" />
-            <span>SPECS ↗</span>
+            <span>MHIT PROPOSAL</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
           <button
             onClick={handleLogout}
-            className="inline-flex items-center p-2 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
-            title="Lock Portal (Log Out)"
-            aria-label="Lock Portal"
+            className="inline-flex items-center p-2 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+            title="Lock Session"
+            aria-label="Lock Session"
           >
             <Lock className="w-3.5 h-3.5" />
           </button>
@@ -81,7 +76,7 @@ export const HeaderNav: React.FC = () => {
 
       {/* Mobile Dropdown Drawer */}
       {mobileOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-white/98 backdrop-blur-xl border-b border-slate-200 px-6 py-6 shadow-xl flex flex-col gap-4 text-sm font-sans font-semibold uppercase tracking-[0.14em] text-slate-800">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-slate-200 px-6 py-5 shadow-xl flex flex-col gap-3 text-xs font-mono font-bold uppercase tracking-wider text-slate-800">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -93,29 +88,20 @@ export const HeaderNav: React.FC = () => {
             </a>
           ))}
           <Link
-            href="/specs/"
+            href="/"
             onClick={() => setMobileOpen(false)}
-            className="py-2 text-[#0085ca] flex items-center justify-between border-b border-slate-100 transition-colors"
+            className="py-2 text-[#0085ca] flex items-center justify-between border-b border-slate-100"
           >
-            <span>FULL TECHNICAL SPECS</span>
-            <FileText className="w-4 h-4" />
+            <span>MHIT PROPOSAL</span>
+            <ArrowUpRight className="w-4 h-4" />
           </Link>
-          <div className="pt-2 space-y-2">
-            <a
-              href="/#contact"
-              onClick={() => setMobileOpen(false)}
-              className="w-full text-center block py-3 rounded-xl bg-[#0085ca] hover:bg-[#006ba8] text-white text-xs font-mono font-bold tracking-wider uppercase transition-colors shadow-md shadow-[#0085ca]/20"
-            >
-              Direct Inquiry
-            </a>
-            <button
-              onClick={handleLogout}
-              className="w-full text-center py-2.5 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-800 text-xs font-mono font-medium tracking-wider uppercase transition-colors flex items-center justify-center gap-1.5"
-            >
-              <Lock className="w-3.5 h-3.5" />
-              <span>Lock Portal</span>
-            </button>
-          </div>
+          <button
+            onClick={handleLogout}
+            className="w-full text-center py-2.5 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-800 text-xs font-mono font-medium uppercase flex items-center justify-center gap-1.5"
+          >
+            <Lock className="w-3.5 h-3.5" />
+            <span>Lock Session</span>
+          </button>
         </div>
       )}
     </header>

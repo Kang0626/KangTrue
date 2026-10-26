@@ -10,12 +10,10 @@ interface Section {
 }
 
 const SECTIONS: Section[] = [
-  { id: 'hero', step: '01', shortTag: 'OVERVIEW', subLabel: 'Lead Proposal' },
-  { id: 'strategic-value', step: '02', shortTag: 'STRATEGY', subLabel: 'ROI & Defence' },
-  { id: 'case-01', step: '03', shortTag: 'CAPTURE', subLabel: '3DGS 17.5M' },
-  { id: 'case-02', step: '04', shortTag: 'SYNTHETIC', subLabel: 'USD Stage' },
-  { id: 'pipeline-tooling', step: '05', shortTag: 'PIPELINE', subLabel: 'Automation' },
-  { id: 'contact', step: '06', shortTag: 'PROFILE', subLabel: 'Candidate' },
+  { id: 'hero', step: '00', shortTag: 'INDEX', subLabel: 'R&D Overview' },
+  { id: 'case-01', step: '01', shortTag: '3DGS R&D', subLabel: 'Capture & SOP' },
+  { id: 'case-02', step: '02', shortTag: 'USD + 3DGS', subLabel: 'Hybrid Merge' },
+  { id: 'pipeline-tooling', step: '03', shortTag: 'TOOLING', subLabel: 'Python GUI' },
 ];
 
 export const ScrollProgressNav: React.FC = () => {
@@ -27,15 +25,12 @@ export const ScrollProgressNav: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Reveal indicator on scroll
       setIsVisible(true);
 
-      // Clear existing hide timer
       if (hideTimerRef.current) {
         clearTimeout(hideTimerRef.current);
       }
 
-      // Hide after 1.6s idle unless hovered
       hideTimerRef.current = setTimeout(() => {
         setIsVisible(false);
       }, 1600);
@@ -45,7 +40,6 @@ export const ScrollProgressNav: React.FC = () => {
       const percent = docHeight > 0 ? Math.min(100, Math.max(0, (scrollY / docHeight) * 100)) : 0;
       setScrollPercent(percent);
 
-      // Section detection: find section nearest to the upper-middle viewport
       const offsetTarget = window.innerHeight * 0.35;
       let currentSection = SECTIONS[0].id;
 
@@ -107,7 +101,6 @@ export const ScrollProgressNav: React.FC = () => {
       }`}
     >
       <div className="relative flex flex-col items-center gap-2 py-2.5 px-1 rounded-full bg-white/40 hover:bg-white/90 backdrop-blur-md border border-slate-200/70 shadow-xs hover:shadow-md transition-all duration-300">
-        {/* Continuous progress track line */}
         <div className="absolute left-1/2 top-3 bottom-3 -translate-x-1/2 w-0.5 bg-slate-200/80 rounded-full overflow-hidden pointer-events-none">
           <div
             className="w-full bg-[#0085ca] transition-all duration-150"
@@ -126,7 +119,6 @@ export const ScrollProgressNav: React.FC = () => {
                 aria-current={isActive ? 'true' : 'false'}
                 className="relative z-10 flex items-center justify-center p-1 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0085ca]"
               >
-                {/* Pill indicator */}
                 <span
                   className={`block rounded-full transition-all duration-300 ${
                     isActive
@@ -136,9 +128,8 @@ export const ScrollProgressNav: React.FC = () => {
                 />
               </button>
 
-              {/* Compact 2-Line Tooltip Label — Only on Hover */}
               <div className="absolute left-full ml-2 pointer-events-none transition-all duration-200 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 flex items-center">
-                <div className="bg-slate-900/95 text-white py-1 px-2 rounded-md shadow-lg border border-slate-700/80 backdrop-blur-md flex flex-col leading-tight min-w-[70px] max-w-[95px]">
+                <div className="bg-slate-900/95 text-white py-1 px-2 rounded-md shadow-lg border border-slate-700/80 backdrop-blur-md flex flex-col leading-tight min-w-[75px] max-w-[105px]">
                   <span className="text-[#0085ca] font-mono font-bold text-[9px] tracking-wider">
                     {sec.step} · {sec.shortTag}
                   </span>

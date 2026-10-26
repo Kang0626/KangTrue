@@ -220,16 +220,16 @@ if (count < min_neighbors) {
                         <div className="flex flex-wrap items-center gap-2 mb-3">
                           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0085ca]/20 border border-[#0085ca]/40 text-[11px] font-mono text-sky-300 font-bold uppercase tracking-wider">
                             <Sparkles className="w-3.5 h-3.5 text-[#38bdf8]" />
-                            Production Lead Value Proposition
+                            Spatial Computing &amp; Telepresence Impact
                           </span>
-                          <span className="text-xs font-mono text-slate-400">Commercial &amp; Regulatory Impact</span>
+                          <span className="text-xs font-mono text-slate-400">Hybrid Radiance Advantages</span>
                         </div>
 
                         <h3 className="text-xl sm:text-2xl font-extrabold text-white font-sans tracking-tight mb-2">
-                          Why This Matters to Truescape
+                          Why Hybrid 3DGS + OpenUSD Matters for Spatial Research
                         </h3>
                         <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed mb-6 max-w-3xl">
-                          Transforming complex procedural R&amp;D into decisive commercial ROI: solving the three most resource-intensive bottlenecks in infrastructure consent visualization.
+                          Combining real-world 3DGS captures with procedural OpenUSD assets resolves core limitations in mixed reality and remote spatial inspection.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -301,7 +301,7 @@ if (count < min_neighbors) {
                   {sec.id === 'mcp-automation' && (
                     <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-950 overflow-hidden shadow-lg">
                       <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900 border-b border-slate-800 text-xs font-mono text-slate-300">
-                        <span>truescape_mcp_houdini_service.py</span>
+                        <span>houdini_mcp_automation_service.py</span>
                         <button
                           onClick={handleCopyScript}
                           className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono transition-colors font-semibold border border-slate-700"
@@ -347,7 +347,7 @@ if (count < min_neighbors) {
                             <div className="lg:col-span-4 p-3.5 rounded-xl bg-emerald-950/25 border border-emerald-900/35 text-xs font-sans text-emerald-200/90 leading-relaxed">
                               <div className="flex items-center gap-1.5 text-emerald-400 font-mono text-[10px] uppercase font-bold mb-1">
                                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                                <span>Truescape 3DGS + OpenUSD</span>
+                                <span>Hybrid 3DGS + OpenUSD</span>
                               </div>
                               {row.nextGen}
                             </div>
@@ -383,7 +383,7 @@ if (count < min_neighbors) {
       {/* Document Footer */}
       <footer className="py-12 border-t border-slate-200 bg-white text-center text-xs font-mono text-slate-500">
         <p className="text-slate-700 font-medium">
-          © 2026 Truescape Production Lead Proposal — Prepared by {SITE_METADATA.author} | Christchurch, New Zealand
+          © 2026 Independent 3DGS &amp; OpenUSD Research — Prepared by {SITE_METADATA.author} | Christchurch, New Zealand
         </p>
       </footer>
     </div>
