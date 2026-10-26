@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X, ArrowUpRight, Lock } from 'lucide-react';
+import { Menu, X, Lock } from 'lucide-react';
 
 export const HeaderNav: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -47,13 +46,6 @@ export const HeaderNav: React.FC = () => {
               {link.label}
             </a>
           ))}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-100 text-slate-700 border border-slate-200 hover:bg-[#0085ca] hover:text-white hover:border-[#0085ca] transition-all"
-          >
-            <span>MHIT PROPOSAL</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
           <button
             onClick={handleLogout}
             className="inline-flex items-center p-2 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
@@ -87,14 +79,6 @@ export const HeaderNav: React.FC = () => {
               {link.label}
             </a>
           ))}
-          <Link
-            href="/"
-            onClick={() => setMobileOpen(false)}
-            className="py-2 text-[#0085ca] flex items-center justify-between border-b border-slate-100"
-          >
-            <span>MHIT PROPOSAL</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
           <button
             onClick={handleLogout}
             className="w-full text-center py-2.5 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-800 text-xs font-mono font-medium uppercase flex items-center justify-center gap-1.5"

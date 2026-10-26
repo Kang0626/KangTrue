@@ -16,26 +16,20 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Strictly protected private route: /showcase (and any subroutes) - Only for Kang with password
+  // Permanently redirect legacy /showcase to /
   if (pathname.startsWith('/showcase')) {
-    if (!isAuthenticated) {
-      const loginUrl = new URL('/login/', request.url);
-      loginUrl.searchParams.set('redirect', pathname);
-      return NextResponse.redirect(loginUrl);
-    }
-    return NextResponse.next();
+    return NextResponse.redirect(new URL('/', request.url), 308);
   }
 
-  // If user is already authenticated and visits /login, redirect to /showcase/
+  // If user is already authenticated and visits /login, redirect to /
   if (pathname.startsWith('/login')) {
     if (isAuthenticated) {
-      const redirectTarget = request.nextUrl.searchParams.get('redirect') || '/showcase/';
+      const redirectTarget = request.nextUrl.searchParams.get('redirect') || '/';
       return NextResponse.redirect(new URL(redirectTarget, request.url));
     }
     return NextResponse.next();
   }
 
-  // All other routes: / (MHIT Proposal), /specs (Research Methodology), and public assets
   return NextResponse.next();
 }
 
