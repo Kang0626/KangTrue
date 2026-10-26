@@ -30,7 +30,7 @@ export const HeaderNav: React.FC = () => {
               KANGSIK KO
             </span>
             <span className="text-[9px] font-mono font-bold text-[#0085ca] uppercase tracking-[0.14em] mt-1">
-              3DGS &amp; OPENUSD R&amp;D CASE STUDIES
+              PERSONAL 3DGS &amp; OPENUSD PORTFOLIO
             </span>
           </div>
         </a>

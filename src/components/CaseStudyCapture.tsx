@@ -27,7 +27,7 @@ export const CaseStudyCapture: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-slate-200">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#0085ca]/10 text-[#0085ca] border border-[#0085ca]/20 mb-3 uppercase tracking-wider">
-              CASE STUDY 01 · INDEPENDENT 3DGS RESEARCH
+              CASE STUDY 01 · PERSONAL 3DGS RESEARCH
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
               3DGS Reconstruction, Training &amp; Houdini Point Hygiene

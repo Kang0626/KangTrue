@@ -7,8 +7,8 @@ import { PipelineToolSection } from '@/components/PipelineToolSection';
 import { ScrollProgressNav } from '@/components/ScrollProgressNav';
 
 export const metadata = {
-  title: '3DGS & OpenUSD R&D Case Studies | Kangsik Ko',
-  description: 'Independent 3D Gaussian Splatting research, procedural Houdini hygiene, and 3D USD hybrid compositing case studies by Kangsik Ko for HIT Lab NZ.',
+  title: '3DGS & OpenUSD Personal R&D Portfolio | Kangsik Ko',
+  description: 'Personal 3D Gaussian Splatting research, procedural Houdini hygiene, and 3D OpenUSD hybrid compositing case studies by Kangsik (Kang) Ko.',
 };
 
 export default function HomePage() {
@@ -28,14 +28,14 @@ export default function HomePage() {
         <PipelineToolSection />
       </main>
 
-      {/* Clean Minimalist Footer */}
+      {/* Clean Minimalist Personal Portfolio Footer */}
       <footer className="py-12 border-t border-slate-200 bg-white text-center text-xs font-mono text-slate-500">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-slate-800 font-bold">
-            Kangsik (Kang) Ko · Independent 3DGS &amp; OpenUSD R&amp;D Case Studies
+            Kangsik (Kang) Ko · Personal 3DGS &amp; OpenUSD R&amp;D Portfolio
           </span>
           <span className="text-slate-500">
-            HIT Lab NZ Research Demonstration · Christchurch, New Zealand
+            Spatial Computing &amp; Procedural VFX · Christchurch, New Zealand
           </span>
         </div>
       </footer>

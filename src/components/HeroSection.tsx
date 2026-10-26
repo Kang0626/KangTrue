@@ -12,7 +12,7 @@ export const HeroSection: React.FC = () => {
             {/* Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-[11px] font-mono text-[#0085ca] font-bold tracking-wider uppercase mb-4">
               <span className="w-2 h-2 rounded-full bg-[#0085ca]" />
-              <span>INDEPENDENT R&amp;D &amp; EMPIRICAL CASE STUDIES · HIT LAB NZ DEMO</span>
+              <span>PERSONAL R&amp;D &amp; CASE STUDIES · SPATIAL PORTFOLIO</span>
             </div>
 
             {/* Clean Headline */}
@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             <p className="text-sm sm:text-base text-slate-500 font-mono mt-2">
-              Personal Research &amp; Technical Case Studies by Kangsik (Kang) Ko
+              Personal Research &amp; Technical Case Studies · Kangsik (Kang) Ko
             </p>
           </div>
 

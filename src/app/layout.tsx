@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light scroll-smooth">
       <head>
-        {/* Truescape Official Adobe Typekit (Proxima Nova) */}
+        {/* Proxima Nova Font */}
         <link rel="stylesheet" href="https://use.typekit.net/gwt2gjy.css" />
         {/* Google Fonts: JetBrains Mono & Outfit */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
