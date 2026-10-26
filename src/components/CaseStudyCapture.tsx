@@ -65,28 +65,12 @@ export const CaseStudyCapture: React.FC = () => {
           />
         </div>
 
-        {/* Visual Block 2: 3DGS Convergence Experiments (2 Columns) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <CaptureSlot
-            imagePath="/assets/case1/3dgs_data01.mp4"
-            alt="3DGS Training Dataset 01 — Architectural Scale"
-            label="03. 3DGS Reconstruction Test A — Architectural Geometry"
-            recommendedSize="30 FPS Video"
-          />
-          <CaptureSlot
-            imagePath="/assets/case1/3dgs_data02.mp4"
-            alt="3DGS Training Dataset 02 — Complex Terrain"
-            label="04. 3DGS Reconstruction Test B — Terrain & Structure"
-            recommendedSize="30 FPS Video"
-          />
-        </div>
-
-        {/* Visual Block 3: Houdini SOP Point Cloud Hygiene (Full Width Video + Compact Step Pills) */}
+        {/* Visual Block 2: Houdini SOP Point Cloud Hygiene (Full Width Video + Step Pills) */}
         <div className="space-y-4">
           <CaptureSlot
             imagePath="/assets/case1/houdini_filtering.mp4"
             alt="Houdini SOP Point Cloud Hygiene & Heavy PLY Optimization"
-            label="05. Houdini SOPs — Procedural Box Clipping & VEX k-NN Floater Culling"
+            label="03. Houdini SOPs — Procedural Box Clipping & VEX k-NN Floater Culling"
             recommendedSize="1080p Screen Capture"
           />
 
@@ -108,12 +92,12 @@ export const CaseStudyCapture: React.FC = () => {
           </div>
         </div>
 
-        {/* Visual Block 4: Interactive 3DGS WebGL2 Viewer (The Bowes Museum) */}
+        {/* Visual Block 3: Interactive 3DGS WebGL2 Viewer (The Bowes Museum) */}
         <div>
           <SogViewer
             sogUrl="/assets/case1/the_bowes_museum/meta.json"
             fallbackUrl="/assets/case1/the_bowes_museum/meta.json"
-            title="06. Interactive WebGL2 3DGS Streaming Benchmark — The Bowes Museum"
+            title="04. Interactive WebGL2 3DGS Streaming Benchmark — The Bowes Museum"
             splatCount="17,493,093 Splats · Chunked SOG Octree"
             isReferenceExample={false}
             initialDistance={68.0}
